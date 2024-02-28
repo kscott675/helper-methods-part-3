@@ -51,14 +51,18 @@
         </div>
       </div>
     </nav>
-    <div style="color: green;">
-      <%= notice %>
-    </div>
-
-    <div style="color: red;">
-      <%= alert %>
-    </div>
+    <div class="container container mt-3">
+    <% if notice != nil %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+    <% elsif alert != nil %>
+      <div class="alert alert-danger" role="alert">
+        <%= alert %>
+      </div>
+    <% end %>
 
     <%= yield %>
+    </div>
   </body>
 </html>
